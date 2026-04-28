@@ -2,7 +2,8 @@ my_dict = {
     'tuple': (7.2, 'Hello', 13, True, 'hello'),
     'list': ['first', 2, 'Third', 4.1, '5'],
     'dict': {
-        '1' : 'one', '2': 'two', '3': 'three', '4': 'four', '5': 'five'},
+        '1': 'one', '2': 'two', '3': 'three', '4': 'four', '5': 'five'
+    },
     'set': {1, 3, 5, 7, 21}
 }
 
