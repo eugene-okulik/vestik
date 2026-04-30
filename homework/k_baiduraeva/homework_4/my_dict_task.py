@@ -16,7 +16,7 @@ my_dict['list'].pop(1)
 
 # my_dict['dict']['i am a tuple'] = 17
 print(type(my_dict['dict']))
-my_dict['dict']['i am a tuple'] = 17
+my_dict['dict'][('i am a tuple',)] = 17
 my_dict['dict'].pop('1')
 
 my_dict['set'].add(19)
