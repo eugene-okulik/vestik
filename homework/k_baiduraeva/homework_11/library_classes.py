@@ -2,7 +2,6 @@ class Book:
     paper_material = 'бумага'
     text = True
 
-
     def __init__(self, title, author, pages_quantity, ISBN, reserved):
         self.title = title
         self.author = author
@@ -32,7 +31,7 @@ for book in books:
         print(
             f'Название: {book.title}, Автор: {book.author},',
             f'страниц: {book.pages_quantity}, материал: {book.paper_material},',
-            f'зарезервирована'
+            'зарезервирована'
         )
     else:
         print(
