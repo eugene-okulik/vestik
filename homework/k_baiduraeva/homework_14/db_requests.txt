@@ -1,0 +1,58 @@
+insert  into students (name, second_name) values ('Диана', 'Саидхусейнова')
+
+insert into books (title, taken_by_student_id) values ('Основы физ подготовки', 23097)
+
+insert into books (title, taken_by_student_id) values ('Вольная борьба', 23097)
+
+insert into `groups` (title, start_date, end_date) 
+values ('Champions', 'Nov 2011', 'never')
+update students 
+set group_id = 23083 
+where id = 23097
+
+insert into `subjects` (title) values ('Training')
+
+insert into `subjects` (title) values ('Wrestling')
+
+insert into lessons (title, subject_id) values ('lesson2311', 23206)
+
+insert into lessons (title, subject_id) values ('lesson2711', 23206)
+
+insert into lessons (title, subject_id) values ('lesson1111', 23205)
+
+insert into lessons (title, subject_id) values ('lesson3111', 23205)
+
+insert into marks (value, lesson_id, student_id) 
+values 
+(10, 76506, 23097),
+(9, 76507, 23097),
+(9, 76508, 23097),
+(10, 76509, 23097)
+
+select * from marks where student_id = 23097
+
+select * from books where taken_by_student_id = 23097
+
+select 
+s.id,
+s.name,
+s.second_name,
+g.title as group_title,
+g.start_date,
+g.end_date,
+b.title as book_title,
+m.value as mark,
+l.title as lesson_title,
+sub.title as subject_title
+from students s
+left join `groups` g
+on s.group_id = g.id
+left join books b
+on b.taken_by_student_id = s.id
+left join marks m
+on m.student_id = s.id
+left join lessons l
+on m.lesson_id = l.id
+left join subjects sub
+on l.subject_id = sub.id
+where s.id = 23097
